@@ -6,7 +6,7 @@ A simple RESTful API built with **Node.js**, **Express**, and **Sequelize ORM** 
 ---
 hello
 <h1>hello</h1>
-<u>hello</u>
+<p>hello<u>hello</u></p>
 ## Features
 
 - Create, read, update, and delete users
