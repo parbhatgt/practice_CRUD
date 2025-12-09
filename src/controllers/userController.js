@@ -1,3 +1,4 @@
+import { Result } from "tedious/lib/token/helpers.js";
 import userService from "../services/userService.js";
 
 // get all users
@@ -37,6 +38,8 @@ const getUserByEmail = async (req, res) => {
   try {
     const user = await userService.getUserByEmail(email);
 
+    console.log(user);
+
     if (user) res.status(200).json(user);
     else res.status(404).json({ message: "User not found" });
   } catch (error) {
@@ -54,7 +57,7 @@ const updateUserByEmail = async (req, res) => {
     if (!user) {
       return res.sataus(404).json({ message: "User not found" });
     }
-    await userService.updateUser(email, data);
+    await userService.updateUser(email, user, data);
     res.status(200).json({
       message: "User updated successfully",
     });
