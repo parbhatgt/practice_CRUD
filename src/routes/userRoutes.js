@@ -3,6 +3,7 @@ import { getAllUsers, createUser, getUserByEmail, updateUserByEmail, deleteUserB
 
 const router = express.Router();
 
+console.log("hello world::::::::::::::::::::::::::::")
 
 // Get all users
 router.get("/", getAllUsers)
